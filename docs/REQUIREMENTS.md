@@ -29,7 +29,7 @@ The source brief is the user-provided GenAI Intern Assignment. The table maps it
 | One-shot answer failure | Explicit illustrative AI-authored nutrition baseline | Shows unsupported exact calories vs grounded refusal; no external API benchmark claimed |
 | Explain decisions | `ROADMAP.md` | Algorithms, framework inventory, formulas, limitations, module walkthrough |
 | AI assistance disclosure | `AI_DISCLOSURE.md` | States scope of Codex assistance and candidate review responsibilities |
-| Public GitHub repo | Source prepared for publication; `PUBLISH.md` | Publication status must be verified separately; a local ZIP is not a public repository |
+| Public GitHub repo | Published at `quackapuss/recipebox-grounded-chatbot`; `PUBLISH.md` | Source upload and anonymous clone verified; existing repository license preserved |
 | Clear short README | Root `README.md` | Two-command setup/run; offline bundle skips setup |
 
 ## Deliberate scope limits

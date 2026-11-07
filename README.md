@@ -1,5 +1,7 @@
 # Recipe Box: grounded conversational recipe assistant
 
+[![tests](https://github.com/quackapuss/recipebox-grounded-chatbot/actions/workflows/tests.yml/badge.svg)](https://github.com/quackapuss/recipebox-grounded-chatbot/actions/workflows/tests.yml)
+
 Search, calculate dataset statistics, rank recipes against a pantry, and adapt a selected dish using cited local variants. Multi-turn state keeps restrictions active. Python 3.11+ and SQLite FTS5; **no API key and no runtime pip dependencies**.
 
 ## Run
@@ -52,7 +54,7 @@ Unit tests use a tiny synthetic dataset with known answers. Evaluation executes 
 - Ingredient-text exclusions cannot establish medical allergy safety, undisclosed product composition, or cross-contact. Exact nutrition and standardized cooking times are unavailable.
 - No runtime LLM or external culinary search is used. The included one-shot comparison is explicitly an illustrative AI-authored baseline, not an API benchmark.
 
-See [the detailed roadmap](docs/ROADMAP.md), [requirement mapping](docs/REQUIREMENTS.md), and [evaluation report](docs/EVALUATION.md). These explain each module, every method, formulas, evidence policy, actual test results, limitations, and interview exercises.
+See [the detailed roadmap](docs/ROADMAP.md), [downloadable roadmap PDF](docs/RecipeBox_Assignment_Roadmap.pdf), [requirement mapping](docs/REQUIREMENTS.md), and [evaluation report](docs/EVALUATION.md). These explain each module, every method, formulas, evidence policy, actual test results, limitations, and interview exercises.
 
 ## Data and disclosure
 

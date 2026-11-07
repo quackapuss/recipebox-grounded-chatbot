@@ -2,6 +2,8 @@
 
 Executed on 7 November 2026. This report describes actual local runs, with the dataset snapshot identified by the accompanying manifest.
 
+The uploaded source also passed [GitHub Actions on Python 3.11, 3.12 and 3.13](https://github.com/quackapuss/recipebox-grounded-chatbot/actions/runs/42333207380). Public cloning without authentication succeeded. The source was published at commit `47319f25aabbc6f5710a8d4282963ce239c9508f`; later publication/documentation commits do not change application behavior.
+
 - Unit tests: **17 / 17 passed** using a synthetic known-answer dataset.
 - Full-data checks: **17 / 17 passed** across eight executed conversations.
 - Runtime: Python 3.11.9, SQLite 3.45.1.

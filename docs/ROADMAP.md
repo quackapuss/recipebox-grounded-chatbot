@@ -222,7 +222,7 @@ The project includes a short README, source package, known-answer tests, real-da
 
 Why: an interview submission must be runnable by someone who has never seen this chat. The roadmap explains the work, but the README should remain short enough to follow. Disclosure is part of the brief and should be visible.
 
-Output: a source project and packaged deliverable. Public-repository creation is a separate external state and is recorded honestly in `SUBMISSION_STATUS.md`. A prepared local folder is not described as a published repository.
+Output: a source project and packaged deliverable. Public-repository state is recorded in `SUBMISSION_STATUS.md`. After the user selected `quackapuss/recipebox-grounded-chatbot` and authorized Git Credential Manager's official GitHub device sign-in, the source was pushed with local Git. The pre-existing MIT license and initial commit were preserved by merging histories. Anonymous cloning and GitHub Actions verified the published source. The generated database and downloaded archive remain outside Git; setup reproduces them from the official source.
 
 ## 3. Every framework, algorithm, and tool used
 
@@ -276,7 +276,7 @@ No web application framework was used. The CLI satisfies the brief's interface r
 
 ### Development and document-production tools
 
-Codex assisted with reading the brief, architecture, code, testing, debugging, and documentation. Command-line Python and PowerShell were used to run the code and inspect artifacts. `curl` downloaded the brief and official archive. The official Python and SQLite documentation was consulted. The connected GitHub tool was used to check repository-account access; it did not create a repository. The in-app browser checked GitHub repository creation and encountered sign-in.
+Codex assisted with reading the brief, architecture, code, testing, debugging, and documentation. Command-line Python and PowerShell were used to run the code and inspect artifacts. `curl` downloaded the brief and official archive. The official Python and SQLite documentation was consulted. The connected GitHub tool checked access and monitored Actions. The user created the public repository, and local Git published the source after Git Credential Manager device authorization. Git merged the existing license commit without replacing history, and an unauthenticated clone verified public access. Git and Git Credential Manager are development/publication tools, not chatbot runtime dependencies.
 
 For document production, `pypdf` extracted source PDF text, Poppler rendered PDF pages, and ReportLab generated the accompanying roadmap PDF. These are authoring tools, not chatbot runtime dependencies. The PDF was visually checked after rendering. A Markdown roadmap remains included so that explanations are searchable and editable.
 

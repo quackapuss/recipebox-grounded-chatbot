@@ -1,22 +1,33 @@
-# Publish the prepared source
+# Publication record
 
-The assignment asks for a publicly accessible GitHub repository. The user selected [quackapuss/recipebox-grounded-chatbot](https://github.com/quackapuss/recipebox-grounded-chatbot), which exists and is public. The source is prepared locally, but upload is pending authenticated write access. Check `SUBMISSION_STATUS.md` for the verified publication state; do not assume this document means source publication happened.
+The project is published at [quackapuss/recipebox-grounded-chatbot](https://github.com/quackapuss/recipebox-grounded-chatbot).
 
-Recommended repository name: `recipebox-grounded-chatbot`.
+- Source upload verified at commit `47319f25aabbc6f5710a8d4282963ce239c9508f`.
+- The repository's existing MIT license and initial commit were preserved by merging histories.
+- Public access was verified with an unauthenticated clone.
+- [GitHub Actions passed on Python 3.11, 3.12 and 3.13](https://github.com/quackapuss/recipebox-grounded-chatbot/actions/runs/42333207380).
+- Source, tests, README, Markdown/PDF roadmap, evaluation and dataset attribution are included.
+- Downloaded raw data, the generated database and local caches are excluded by `.gitignore`.
+- No recruiter message or assignment-form submission was sent.
 
-The public repository already exists. Do not upload the `data` directory, the offline database, downloaded archive, or local caches. The project `.gitignore` excludes them.
+Publication used local Git after the user completed Git Credential Manager's official GitHub device authorization as `quackapuss`. The separate connected GitHub integration was used for repository inspection and Actions verification.
 
-From the source folder, with Git installed and authenticated:
+## Clone and run
 
 ```shell
-git init
-git add .
-git commit -m "Build grounded Recipe Box conversational assistant"
-git branch -M main
-git remote add origin https://github.com/quackapuss/recipebox-grounded-chatbot.git
-git push -u origin main
+git clone https://github.com/quackapuss/recipebox-grounded-chatbot.git
+cd recipebox-grounded-chatbot
+python -m recipebox setup
+python -m recipebox chat
 ```
 
-Confirm the public repository and uploaded source can be opened while signed out. Test the README commands from a fresh clone, and submit that verified URL. The included GitHub Actions workflow runs synthetic tests; the large data download remains an explicit local evaluation step.
+Python 3.11+ with SQLite FTS5 is required. Setup downloads and imports all three official JSON files; no API key is needed. The offline deliverable already contains the generated database and can skip setup.
 
-The current GitHub connection reports read access only (`push: false`) for the selected repository. Connect an account with write access before attempting publication. The integration can update the source once that access is available.
+## Reproduce checks
+
+```shell
+python -m unittest discover -s tests -v
+python -m recipebox evaluate
+```
+
+The public repository URL is the assignment submission link. Review the README, roadmap, limitations and AI disclosure before the interview.
