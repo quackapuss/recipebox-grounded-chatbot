@@ -1,0 +1,306 @@
+{
+  "generated_utc": "2026-11-07T02:48:15.899050+00:00",
+  "python": "3.11.9",
+  "sqlite": "3.45.1",
+  "dataset": {
+    "normalization_version": "1.0",
+    "sources": {
+      "ar": {
+        "file": "recipes_raw_nosource_ar.json",
+        "sha256": "93da2202eacb85ad81b50e49f9c1ceba33eb298f1c82a6d02eb59cab7d550cb5",
+        "raw_records": 39802,
+        "valid_records": 39522,
+        "invalid_records": 280
+      },
+      "epi": {
+        "file": "recipes_raw_nosource_epi.json",
+        "sha256": "08c7c8103a9c0dd114dc3fe01490fdf86ec9dee05d4db7d96504a61b5e8a886e",
+        "raw_records": 25323,
+        "valid_records": 25260,
+        "invalid_records": 63
+      },
+      "fn": {
+        "file": "recipes_raw_nosource_fn.json",
+        "sha256": "ea2487a1a6f81cd395754dc355fa12c47b51e5fac21d23f26fb0fd00479307f7",
+        "raw_records": 60039,
+        "valid_records": 58153,
+        "invalid_records": 1886
+      }
+    },
+    "invalid_examples": [
+      "ar:94V2SSnZJgoSjVtl6U.eIFLpM.8eui6",
+      "ar:yza7eX.1Xf5l8UW1FzFzBo/4szXOXtu",
+      "ar:5WFnvUWMtWENr9atI0zwBsDXwegyH2W",
+      "ar:gkJMVZbxTx/u6AmbO5qKV.B7yTCTINu",
+      "ar:07q2azUXkshnim3m1z6LB3ZIWKrXSFO",
+      "ar:ENCqI.wgshWkzXOKVQp919oSY2alT6m",
+      "ar:u/Y3LJG7sm8thimmJnADLC2Bb0pabYK",
+      "ar:exQpEXHlppw1uL6wS.qTo0TpGhy6jVO",
+      "ar:.mLAwpDQJWDST1uXL9JrHSIW9cybClu",
+      "ar:qCh3PoKsGKT3gG6oHdoO0tRjqfGHysq",
+      "ar:kqmHGeH1tbLL6HQStW/.bWfGC7fda6q",
+      "ar:mLREL8r7Pl1PTyNZboSgw7rSOjVAHx2"
+    ],
+    "duplicate_content_records": 1695,
+    "raw_records": 125164,
+    "valid_records": 122935,
+    "duplicate_policy": "Keep source records; no content deduplication. Counts are records, not unique dishes."
+  },
+  "conversations": [
+    {
+      "name": "1. Search, persistent dairy restriction, and original recipe",
+      "messages": [
+        "Find a penne pasta recipe.",
+        "I cannot have dairy.",
+        "Show the first recipe.",
+        "Does this recipe contain garlic?"
+      ],
+      "response_kinds": [
+        "search",
+        "search",
+        "recipe",
+        "fact"
+      ],
+      "seconds": 0.087
+    },
+    {
+      "name": "2. Exact aggregate and follow-up percentage",
+      "messages": [
+        "How many recipes contain both garlic and onion? What percentage of the dataset is that?",
+        "What percentage of the dataset is that?"
+      ],
+      "response_kinds": [
+        "stats",
+        "stats"
+      ],
+      "seconds": 5.573
+    },
+    {
+      "name": "3. Global filtered ranking and descriptive statistics",
+      "messages": [
+        "Among recipes containing tomato, which five have the fewest instruction steps?",
+        "What is the average ingredient count of those recipes?",
+        "What is the median ingredient count of those recipes?",
+        "What are the common ingredients in those recipes?"
+      ],
+      "response_kinds": [
+        "stats",
+        "stats",
+        "stats",
+        "stats"
+      ],
+      "seconds": 16.256
+    },
+    {
+      "name": "4. Pantry matching and an additional hard restriction",
+      "messages": [
+        "I have eggs, onions, tomatoes, and rice. Suggest five recipes using as many of these as possible, with no peanuts and at most six instruction steps. Prefer recipes that need the fewest additional ingredients.",
+        "Exclude eggs too"
+      ],
+      "response_kinds": [
+        "match",
+        "match"
+      ],
+      "seconds": 5.679
+    },
+    {
+      "name": "5. No match and empty aggregate",
+      "messages": [
+        "Find a recipe containing unobtainiumdragonfruit.",
+        "Exclude dairy too",
+        "/stats average"
+      ],
+      "response_kinds": [
+        "search",
+        "search",
+        "stats"
+      ],
+      "seconds": 0.425
+    },
+    {
+      "name": "6. Egg removal using local banana-bread variants",
+      "messages": [
+        "/show ar:BoBTO3QUO3Ci.0kayPs8.CfDU5oEXuu",
+        "Remove eggs from this recipe."
+      ],
+      "response_kinds": [
+        "recipe",
+        "adapt"
+      ],
+      "seconds": 1.412
+    },
+    {
+      "name": "7. Weak or conflicting egg-replacement evidence",
+      "messages": [
+        "/show fn:iHT1fnKPNhwFVeWTbEWehsxpLArHaXG",
+        "Remove eggs from this recipe."
+      ],
+      "response_kinds": [
+        "recipe",
+        "adapt"
+      ],
+      "seconds": 1.48
+    },
+    {
+      "name": "8. Unsupported nutrition and quantity-aware name matching",
+      "messages": [
+        "How many calories does this recipe have?",
+        "/match 2 eggs,500 g rice,1 onion",
+        "/scope"
+      ],
+      "response_kinds": [
+        "unavailable",
+        "match",
+        "state"
+      ],
+      "seconds": 3.504
+    }
+  ],
+  "checks": [
+    {
+      "name": "search returns real IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "follow-up retains dish and excludes dairy",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "original instructions retrievable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selected-recipe Q&A cites original ingredient lines",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aggregate equals independent full-record scan",
+      "passed": true,
+      "detail": "21399"
+    },
+    {
+      "name": "follow-up denominator and scope persist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "step ranking uses tomato population",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "average median common use same full scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "pantry five eligible existing recipes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "pantry restriction follow-up persists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "pantry result keys are ordered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no match does not relax restrictions",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "empty average is null",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "banana adaptation cites compatible complete variants",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "weak structural-egg evidence is refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "nutrition answer refuses fabrication",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "quantity checks exposed",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "limitations": [
+    "Bounded rule-based language router; unsupported wording needs exact commands.",
+    "Substitutions use complete observed variants, not validated one-to-one ingredient ratios.",
+    "No external LLM API baseline was executed; the comparison below is an explicitly illustrative AI-authored ungrounded answer.",
+    "Ingredient text cannot certify product allergen absence or cross-contact."
+  ],
+  "garlic_onion": {
+    "value": 21399,
+    "denominator": 122935,
+    "percentage_of_dataset": 17.406759669744172
+  },
+  "tomato_statistics": {
+    "population": 19016,
+    "top_five": [
+      {
+        "id": "ar:/0wx00RefE0VHzlff/GBszObKmj63Pi",
+        "title": "Tomato Basil Smoothie",
+        "step_count": 1
+      },
+      {
+        "id": "ar:3wzVv1X6HjgIShD5L9GKsL1ug4SvAPi",
+        "title": "Best Ever Kabob Marinade",
+        "step_count": 1
+      },
+      {
+        "id": "ar:3yxgq0iAqrlm2lHnLoxwJ8vQTHCd/Cm",
+        "title": "Mediterranean Zucchini and Chickpea Salad",
+        "step_count": 1
+      },
+      {
+        "id": "ar:5s.4S6mTsQWRNXHDFGWe6ea03Oac48C",
+        "title": "Momma's Marinara Sauce",
+        "step_count": 1
+      },
+      {
+        "id": "ar:9T2HkniyS.3VZB9NmFvzrfA39fMSt..",
+        "title": "Black Bean and White Corn Salad",
+        "step_count": 1
+      }
+    ],
+    "average_ingredients": 13.411653344551956,
+    "median_ingredients": 12.0
+  },
+  "banana_adaptation": {
+    "base_id": "ar:BoBTO3QUO3Ci.0kayPs8.CfDU5oEXuu",
+    "status": "supported_variant",
+    "donor_ids": [
+      "fn:p174TykunvO./PLjDpl03RBTaXiOEdu"
+    ]
+  },
+  "one_shot_comparison": {
+    "provenance": "Illustrative AI-authored one-shot-style answer; not sampled from a model API and not a measured model benchmark.",
+    "user": "How many calories does this recipe have?",
+    "ungrounded_baseline": "This recipe has exactly 350 calories per serving.",
+    "failure": "The source schema has no standardized nutrition fields or dependable serving yield; the numerical claim has no retrieved evidence.",
+    "grounded_system": "The dataset has no standardized nutrition or cooking-time fields. I will not invent exact values. Use /show 1 to inspect the original instructions for any stated timing."
+  },
+  "passed": 17,
+  "total": 17,
+  "failed": []
+}

@@ -1,0 +1,46 @@
+{
+  "normalization_version": "1.0",
+  "sources": {
+    "ar": {
+      "file": "recipes_raw_nosource_ar.json",
+      "sha256": "93da2202eacb85ad81b50e49f9c1ceba33eb298f1c82a6d02eb59cab7d550cb5",
+      "raw_records": 39802,
+      "valid_records": 39522,
+      "invalid_records": 280
+    },
+    "epi": {
+      "file": "recipes_raw_nosource_epi.json",
+      "sha256": "08c7c8103a9c0dd114dc3fe01490fdf86ec9dee05d4db7d96504a61b5e8a886e",
+      "raw_records": 25323,
+      "valid_records": 25260,
+      "invalid_records": 63
+    },
+    "fn": {
+      "file": "recipes_raw_nosource_fn.json",
+      "sha256": "ea2487a1a6f81cd395754dc355fa12c47b51e5fac21d23f26fb0fd00479307f7",
+      "raw_records": 60039,
+      "valid_records": 58153,
+      "invalid_records": 1886
+    }
+  },
+  "invalid_examples": [
+    "ar:94V2SSnZJgoSjVtl6U.eIFLpM.8eui6",
+    "ar:yza7eX.1Xf5l8UW1FzFzBo/4szXOXtu",
+    "ar:5WFnvUWMtWENr9atI0zwBsDXwegyH2W",
+    "ar:gkJMVZbxTx/u6AmbO5qKV.B7yTCTINu",
+    "ar:07q2azUXkshnim3m1z6LB3ZIWKrXSFO",
+    "ar:ENCqI.wgshWkzXOKVQp919oSY2alT6m",
+    "ar:u/Y3LJG7sm8thimmJnADLC2Bb0pabYK",
+    "ar:exQpEXHlppw1uL6wS.qTo0TpGhy6jVO",
+    "ar:.mLAwpDQJWDST1uXL9JrHSIW9cybClu",
+    "ar:qCh3PoKsGKT3gG6oHdoO0tRjqfGHysq",
+    "ar:kqmHGeH1tbLL6HQStW/.bWfGC7fda6q",
+    "ar:mLREL8r7Pl1PTyNZboSgw7rSOjVAHx2"
+  ],
+  "duplicate_content_records": 1695,
+  "raw_records": 125164,
+  "valid_records": 122935,
+  "duplicate_policy": "Keep source records; no content deduplication. Counts are records, not unique dishes.",
+  "archive_url": "https://eightportions.com/recipes_raw.zip",
+  "archive_sha256": "1ae20f3260313d501edf23c22c6f1875e87917f5a8e2ff13b40450719322c81b"
+}
